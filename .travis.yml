@@ -1,0 +1,34 @@
+language: node_js
+node_js:
+  - lts/*
+cache:
+  directories:
+    - node_modules
+before_install:
+  - npm install hexo-cli -g
+install:
+  - npm install
+script:
+  - git clone -b 3.0.1 https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+  - cp -rf source/img/* themes/Butterfly/source/img/
+  - hexo clean
+  - hexo g
+after_success:
+  - git config --global user.name "${U_NAME}"
+  - git config --global user.email "${U_EMAIL}"
+  - git clone "https://${GH_TOKEN}@${GH_REF}"
+  - cp -rf public/* yujihu.github.io/
+  - cd ./yujihu.github.io
+  - git add .
+  - git commit -m 'travis-ci auto build yujihu-blog'
+  - git push origin "${P_BRANCH}"
+  - cd ../
+  - git clone "https://${U_NAME2}:${CO_TOKEN}@${CO_REF}"
+  - cp -rf public/* yujihu.coding.io/
+  - cd ./yujihu.coding.io
+  - git add .
+  - git commit -m 'travis-ci auto build yujihu-blog'
+  - git push origin "${P_BRANCH}"
+branches:
+  only:
+    - master
