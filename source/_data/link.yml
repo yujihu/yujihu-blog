@@ -1,0 +1,18 @@
+class:
+  class_name: 友链
+  link_list:
+    1:
+      name: YolkPie
+      link: https://yolkpie.net/
+      avatar: /img/yolkpie.png
+      descr: 前端研发部
+    2:
+      name: Yolk CLI
+      link: https://yolkpie.net/yolk-cli/
+      avatar: /img/yolkcli.png
+      descr: 前端项目脚手架
+    3:
+      name: Yolk Works
+      link: https://yolkpie.net/yolkworks-list/#/
+      avatar: /img/yolkworks.png
+      descr: 海量模板及组件
