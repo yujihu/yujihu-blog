@@ -15,3 +15,4 @@ $ hexo new <title>       # 创建新文章
 - [Butterfly](https://demo.jerryc.me/posts/21cfbf15/)
 - [Travis CI](https://travis-ci.com/)
 - [Travis CI配置](https://segmentfault.com/a/1190000020161425)
+- [gitalk](https://github.com/gitalk/gitalk)
